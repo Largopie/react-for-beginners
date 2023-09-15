@@ -23,7 +23,7 @@ function Home() {
     return (
         <div>
             {loading ? <h1>loading...</h1> : <div>{movies.map((movie) =>
-                <Movie key={movie.id} coverImg={movie.large_cover_image} title={movie.title} genres={movie.genres} />
+                <Movie id={movie.id} key={movie.id} coverImg={movie.large_cover_image} title={movie.title} genres={movie.genres} />
             )}</div>}
         </div>
     );

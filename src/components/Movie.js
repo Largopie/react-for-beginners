@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
-
-
-const Movie = ({coverImg, title, summary, genres}) => {
+import { Link } from 'react-router-dom';
+const Movie = ({ id, coverImg, title, summary, genres}) => {
   return (
     <div>
-      <img src={coverImg} />
-      <h2>{title}</h2>
+      <img alt="coverImg" src={coverImg} />
+      <h2><Link to={`/movie/${id}`}>{title}</Link></h2>
       <p>{summary}</p>
       <ul>
         {genres.map((genre) => <li key={genre}>{genre}</li>)}
@@ -15,6 +14,7 @@ const Movie = ({coverImg, title, summary, genres}) => {
 }
 
 Movie.propTypes = {
+  id: PropTypes.number.isRequired,
   coverImg: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
