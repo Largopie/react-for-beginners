@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react';
 import Movie from '../components/Movie';
+import styled from 'styled-components';
+
+const MainContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+`
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -20,12 +28,13 @@ function Home() {
     }, []);
 
     console.log(movies);
+
     return (
-        <div>
+        <MainContainer>
             {loading ? <h1>loading...</h1> : <div>{movies.map((movie) =>
                 <Movie id={movie.id} key={movie.id} coverImg={movie.large_cover_image} title={movie.title} genres={movie.genres} />
             )}</div>}
-        </div>
+        </MainContainer>
     );
 }
 

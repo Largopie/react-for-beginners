@@ -2,6 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import MovieDetail from '../components/MovieDetail';
+import styled from 'styled-components'
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 //json을 State에 담아 상세정보 출력 Detail에다가 출력해보기
 function Detail() {
@@ -24,11 +32,11 @@ function Detail() {
     console.log(data);
 
     return (
-        <div>
+        <Container>
             {loading ? 
             <MovieDetail des={data.description_full} runtime={data.runtime} genres={data.genres} coverImg={data.large_cover_image} />
             : <h1>Loading...</h1>}
-        </div>
+        </Container>
     );
 }
 

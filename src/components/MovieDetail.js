@@ -1,8 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 const MovieDetail = ({ coverImg, genres, runtime, des }) => {
     return (
-        <div>
+        <Container>
             <img alt="coverImg" src={coverImg} />
             <h2>장르</h2>
             <ul>
@@ -11,7 +19,7 @@ const MovieDetail = ({ coverImg, genres, runtime, des }) => {
             <h4>{runtime} 분</h4>
             <h2>줄거리</h2>
             <p>{des}</p>
-        </div>
+        </Container>
     );
 }
 
