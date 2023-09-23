@@ -27,11 +27,15 @@ const Title = styled.div`
   padding: 1rem;
   text-align: center;
   font-size: 1.5rem;
+  color: #fff;
+  filter: drop-shadow(0 0 2px rgba(36, 255, 102, 0.7))
+    drop-shadow(0 0 5px rgba(36, 255, 102, 0.7))
+    drop-shadow(0 0 15px rgba(36, 255, 102, 0.7));
 `
 
 const StyledLink = styled(Link)`
   &:hover {
-    color: #fff;
+    color: rgb(36, 255, 102);
   }
 `
 
