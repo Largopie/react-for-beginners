@@ -7,30 +7,46 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-`
+  height: 100%;
+  background-color: #1E293B;
+  color: #94A3B8;
+  border-radius: 1rem;
 
-const Image = styled.img`
-  max-width: 300px;
-
-  @media (max-width: 768px) {
-    max-width: 100px;
+  &:hover{
+    transform: scale(0.995);
+    box-shadow: 3px 3px 3px 3px #868e86;
   }
 `
 
-const Summary = styled.div`
-  height: 40px;
-  overflow: scroll;
+const Image = styled.img`
+  max-width: 250px;
+  padding: 1rem;
 `
 
-const Movie = ({ id, coverImg, title, summary, genres}) => {
+const Title = styled.div`
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+`
+
+const StyledLink = styled(Link)`
+  &:hover {
+    color: #fff;
+  }
+`
+
+const Genre = styled.div`
+  display: flex;
+  padding: 1rem;
+`
+const Movie = ({ id, coverImg, title, genres}) => {
   return (
     <Container>
       <Image alt="coverImg" src={coverImg} />
-      <h2><Link to={`/movie/${id}`}>{title}</Link></h2>
-      <Summary>{summary}</Summary>
-      <ul>
-        {genres.map((genre) => <li key={genre}>{genre}</li>)}
-      </ul>
+      <Title><StyledLink to={`/movie/${id}`}>{title}</StyledLink></Title>
+      <Genre>
+        {genres.map((genre) => <div>| {genre} |</div>)}
+      </Genre>
     </Container>
   );
 }
