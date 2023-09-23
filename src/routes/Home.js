@@ -32,7 +32,7 @@ function Home() {
     return (
         <MainContainer>
             {loading ? <h1>loading...</h1> : <div>{movies.map((movie) =>
-                <Movie id={movie.id} key={movie.id} coverImg={movie.large_cover_image} title={movie.title} genres={movie.genres} />
+                <Movie summary={movie.summary} id={movie.id} key={movie.id} coverImg={movie.large_cover_image} title={movie.title} genres={movie.genres} />
             )}</div>}
         </MainContainer>
     );
