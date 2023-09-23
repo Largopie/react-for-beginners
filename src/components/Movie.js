@@ -45,7 +45,7 @@ const Movie = ({ id, coverImg, title, genres}) => {
       <Image alt="coverImg" src={coverImg} />
       <Title><StyledLink to={`/movie/${id}`}>{title}</StyledLink></Title>
       <Genre>
-        {genres.map((genre) => <div>| {genre} |</div>)}
+        {genres.join(', ')}
       </Genre>
     </Container>
   );

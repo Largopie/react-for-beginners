@@ -29,12 +29,10 @@ function Detail() {
         getMovie();
     }, []);
     
-    console.log(data);
-
     return (
         <Container>
             {loading ? 
-            <MovieDetail des={data.description_full} runtime={data.runtime} genres={data.genres} coverImg={data.large_cover_image} />
+            <MovieDetail title={data.title} des={data.description_full} runtime={data.runtime} genres={data.genres} coverImg={data.large_cover_image} />
             : <h1>Loading...</h1>}
         </Container>
     );
